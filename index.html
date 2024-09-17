@@ -52,26 +52,31 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">S4D: Streaming 4D Real-World Reconstruction with Gaussians and 3D Control Points</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://github.com/hebing-sjtu" target="_blank">Bing He</a><sup>*</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://github.com/YunuoChen" target="_blank">Yunuo Chen</a><sup>*</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://guolusjtu.github.io/guoluhomepage/" target="_blank">Lu Guo</a>,</span>
+                    <span class="author-block">
+                      <a href="https://ee.sjtu.edu.cn/FacultyDetail.aspx?id=22&infoid=66&flag=66" target="_blank">Li Song</a><sup>&dagger;</sup>,</span>
+                      <span class="author-block">
+                        <a href="https://ee.sjtu.edu.cn/FacultyDetail.aspx?id=14&infoid=66&flag=66" target="_blank">Wenjun Zhang</a>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">Shanghai Jiao Tong University<br>arXiv 2024</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>,
+                      <span class="crspd-author"><small><br><sup>&dagger;</sup>Indicates Corresponding Author</small></span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- Arxiv PDF link -->
+                         <!-- Arxiv PDF link
                       <span class="link-block">
                         <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
@@ -80,9 +85,9 @@
                         </span>
                         <span>Paper</span>
                       </a>
-                    </span>
+                    </span> -->
 
-                    <!-- Supplementary PDF link -->
+                    <!-- Supplementary PDF link
                     <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
@@ -91,11 +96,11 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/hebing-sjtu/S4D" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -106,7 +111,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://arxiv.org/abs/2408.13036" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -123,22 +128,7 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
+
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -148,7 +138,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Recently, the dynamic scene reconstruction using Gaussians has garnered increased interest. 
+Mainstream approaches typically employ a global deformation field to warp a 3D scene in the canonical space. 
+However, the inherently low-frequency nature of implicit neural fields often leads to ineffective representations of complex motions.
+Moreover, their structural rigidity can hinder adaptation to scenes with varying resolutions and durations.
+To overcome these challenges, we introduce a novel approach utilizing discrete 3D control points.
+This method models local rays physically and establishes a motion-decoupling coordinate system, which effectively merges traditional graphics with learnable pipelines for a robust and efficient local 6-degrees-of-freedom (6-DoF) motion representation.
+Additionally, we have developed a generalized framework that incorporates our control points with Gaussians.
+Starting from an initial 3D reconstruction, our workflow decomposes the streaming 4D real-world reconstruction into four independent submodules: 3D segmentation, 3D control points generation, object-wise motion manipulation, and residual compensation.
+Our experiments demonstrate that this method outperforms existing state-of-the-art 4D Gaussian Splatting techniques on both the Neu3DV and CMU-Panoptic datasets.
+Our approach also significantly accelerates training, with the optimization of our 3D control points achievable within just 2 seconds per frame on a single NVIDIA 4070 GPU.
           </p>
         </div>
       </div>
@@ -158,38 +157,37 @@
 <!-- End paper abstract -->
 
 
+
+
 <!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
+        <h2 class="title is-3">Method</h2>
+
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+        <img src="static/images/flows.png" alt="MY ALT TEXT"/>
+        <p class="subtitle has-text-centered">
+          The detailed structure of our workflow begins with segmenting the scene into static background and moving objects, using multiview masks and a Gaussian category voting algorithm. Subsequently, we utilize optical flow to construct a partially learnable system of 3D control points.  The motion-related attributes of Gaussians are manipulated on an object-wise basis. Additionally, we update the Gaussian attributes in a key-frame manner to prevent reconstruction failures due to error accumulation. The supplementary scene information for these keyframes is captured as attribute residuals of the Gaussians.
+        </p>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
+        <img src="static/images/decouple.png" alt="MY ALT TEXT"/>
+        <p class="subtitle has-text-centered">
+          (a) We model the localized light as parallel. The black portions of the 3D control point's motion parameters, which are carried by parallel rays, are bound with local 2D motion priors derived from the optical flow on the image plane.
+(b) The yellow segments remain learnable because a small cluster of parallel rays cannot efficiently represent these elements. To facilitate decoupling, rotation attributes are represented in Euler angle format.
+(c) 3D control points influence their adjacent Gaussian points spatially. During non-keyframe intervals, the attributes of the Gaussians are frozen, and only the learnable parts of the control points are subject to optimization. At keyframes, the attributes of the Gaussians are actively included in the optimization process. For effective interpolation, rotation attributes are expressed in quaternion format.
+        </p>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
      <div class="item">
       <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
+      <img src="static/images/ops.png" alt="MY ALT TEXT"/>
+      <p class="subtitle has-text-centered">
+        Workflow for acquiring 2D motion prior.
+      </p>
     </div>
   </div>
 </div>
@@ -201,57 +199,57 @@
 
 
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
-    <div class="container">
+    <div class="container"> -->
       <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+      <!-- <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
-          <div class="publication-video">
+          <div class="publication-video"> -->
             <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End youtube video -->
 
 
 <!-- Video carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
+          <video poster="" id="video1" autoplay controls muted loop height="100%"> -->
             <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
+            <!-- <source src="static/videos/carousel1.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
+          <video poster="" id="video2" autoplay controls muted loop height="100%"> -->
             <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
+            <!-- <source src="static/videos/carousel2.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\ -->
             <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
+            <!-- <source src="static/videos/carousel3.mp4"
             type="video/mp4">
           </video>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End video carousel -->
 
 
@@ -260,7 +258,7 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -270,7 +268,7 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
@@ -278,13 +276,18 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@article{he2024s4d,
+        title={S4D: Streaming 4D Real-World Reconstruction with Gaussians and 3D Control Points},
+        author={He, Bing and Chen, Yunuo and Lu, Guo and Song, Li and Zhang, Wenjun},
+        journal={arXiv preprint arXiv:2408.13036},
+        year={2024}
+      }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
 
 
-  <footer class="footer">
+  <!-- <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
@@ -300,7 +303,7 @@
       </div>
     </div>
   </div>
-</footer>
+</footer> -->
 
 <!-- Statcounter tracking code -->
   
@@ -310,3 +313,21 @@
 
   </body>
   </html>
+
+
+<!-- Teaser video-->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
+        <!-- Your video here -->
+        <!-- <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Abstract teaser video. 
+      </h2>
+    </div>
+  </div>
+</section> -->
+<!-- End teaser video -->
