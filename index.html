@@ -70,8 +70,7 @@
 
                   <div class="is-size-5 publication-authors">
                     <span class="author-block">Shanghai Jiao Tong University<br>arXiv 2024</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>,
-                      <span class="crspd-author"><small><br><sup>&dagger;</sup>Indicates Corresponding Author</small></span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution,<sup>&dagger;</sup>Indicates Corresponding Author</small></span>,
                   </div>
 
                   <div class="column has-text-centered">
@@ -157,6 +156,28 @@ Our approach also significantly accelerates training, with the optimization of o
 <!-- End paper abstract -->
 
 
+<!-- Workflow section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Workflow</h2>
+    <div class="content">
+      <p>Our workflow consists of the following steps:</p>
+      <ol>
+        <li>3D Segmentation</li>
+        <li>3D Control Points Generation</li>
+        <li>Object-wise Motion Manipulation</li>
+        <li>Residual Compensation</li>
+      </ol>
+      <figure>
+        <img src="path/to/your/flows.png" alt="Workflow Diagram">
+        <figcaption>Figure 1: Overview of the proposed workflow.</figcaption>
+      </figure>
+      <p>The detailed structure of our workflow begins with segmenting the scene into static background and moving objects, using multiview masks and a Gaussian category voting algorithm. Subsequently, we utilize optical flow to construct a partially learnable system of 3D control points.  The motion-related attributes of Gaussians are manipulated on an object-wise basis. Additionally, we update the Gaussian attributes in a key-frame manner to prevent reconstruction failures due to error accumulation. The supplementary scene information for these keyframes is captured as attribute residuals of the Gaussians.</p>
+    </div>
+  </div>
+</section>
+<!-- End workflow section -->
+
 
 
 <!-- Image carousel -->
@@ -164,8 +185,6 @@ Our approach also significantly accelerates training, with the optimization of o
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-        <h2 class="title is-3">Method</h2>
-
        <div class="item">
         <!-- Your image here -->
         <img src="static/images/flows.png" alt="MY ALT TEXT"/>
@@ -287,7 +306,7 @@ Our approach also significantly accelerates training, with the optimization of o
 <!--End BibTex citation -->
 
 
-  <!-- <footer class="footer">
+<!-- <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
