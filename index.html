@@ -156,54 +156,33 @@ Our approach also significantly accelerates training, with the optimization of o
 <!-- End paper abstract -->
 
 
-<!-- Workflow section -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">Workflow</h2>
-    <div class="content">
-      <p>Our workflow consists of the following steps:</p>
-      <ol>
-        <li>3D Segmentation</li>
-        <li>3D Control Points Generation</li>
-        <li>Object-wise Motion Manipulation</li>
-        <li>Residual Compensation</li>
-      </ol>
-      <figure>
-        <img src="path/to/your/flows.png" alt="Workflow Diagram">
-        <figcaption>Figure 1: Overview of the proposed workflow.</figcaption>
-      </figure>
-      <p>The detailed structure of our workflow begins with segmenting the scene into static background and moving objects, using multiview masks and a Gaussian category voting algorithm. Subsequently, we utilize optical flow to construct a partially learnable system of 3D control points.  The motion-related attributes of Gaussians are manipulated on an object-wise basis. Additionally, we update the Gaussian attributes in a key-frame manner to prevent reconstruction failures due to error accumulation. The supplementary scene information for these keyframes is captured as attribute residuals of the Gaussians.</p>
-    </div>
-  </div>
-</section>
-<!-- End workflow section -->
 
 
 
 <!-- Image carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
+       <div class="item"> -->
         <!-- Your image here -->
-        <img src="static/images/flows.png" alt="MY ALT TEXT"/>
+        <!-- <img src="static/images/flows.png" alt="MY ALT TEXT"/>
         <p class="subtitle has-text-centered">
           The detailed structure of our workflow begins with segmenting the scene into static background and moving objects, using multiview masks and a Gaussian category voting algorithm. Subsequently, we utilize optical flow to construct a partially learnable system of 3D control points.  The motion-related attributes of Gaussians are manipulated on an object-wise basis. Additionally, we update the Gaussian attributes in a key-frame manner to prevent reconstruction failures due to error accumulation. The supplementary scene information for these keyframes is captured as attribute residuals of the Gaussians.
         </p>
       </div>
-      <div class="item">
+      <div class="item"> -->
         <!-- Your image here -->
-        <img src="static/images/decouple.png" alt="MY ALT TEXT"/>
+        <!-- <img src="static/images/decouple.png" alt="MY ALT TEXT"/>
         <p class="subtitle has-text-centered">
           (a) We model the localized light as parallel. The black portions of the 3D control point's motion parameters, which are carried by parallel rays, are bound with local 2D motion priors derived from the optical flow on the image plane.
 (b) The yellow segments remain learnable because a small cluster of parallel rays cannot efficiently represent these elements. To facilitate decoupling, rotation attributes are represented in Euler angle format.
 (c) 3D control points influence their adjacent Gaussian points spatially. During non-keyframe intervals, the attributes of the Gaussians are frozen, and only the learnable parts of the control points are subject to optimization. At keyframes, the attributes of the Gaussians are actively included in the optimization process. For effective interpolation, rotation attributes are expressed in quaternion format.
         </p>
       </div>
-     <div class="item">
+     <div class="item"> -->
       <!-- Your image here -->
-      <img src="static/images/ops.png" alt="MY ALT TEXT"/>
+      <!-- <img src="static/images/ops.png" alt="MY ALT TEXT"/>
       <p class="subtitle has-text-centered">
         Workflow for acquiring 2D motion prior.
       </p>
@@ -211,7 +190,7 @@ Our approach also significantly accelerates training, with the optimization of o
   </div>
 </div>
 </div>
-</section>
+</section> -->
 <!-- End image carousel -->
 
 
